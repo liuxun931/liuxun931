@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<meta charset='utf-8'>
+
+<title>Welcome to nginx!</title>
+<style>
+    body {
+        width: 35em;
+        margin: 0 auto;
+        font-family: Tahoma, Verdana, Arial, sans-serif;
+    }
+</style>
+</head>
+
+<body>
+<script>
+
+
+function display_q(){
+	var s = window.location.search.substring(1);
+	var code = s.split('&')[0].split('=')[1];
+	t = document.getElementById('ren_1');
+	t.value = code;
+}
+
+function display_c(){
+	var s = window.location.search.substring(1);
+	var code = s.split('&')[1].split('=')[1];
+	t = document.getElementById('ren_1');
+	t.value = code;
+}
+
+function ascII_decode_me(){
+	t = document.getElementById('ren_1');
+    t.value = unescape(t.value)
+}
+
+
+function url_decode_me(){
+	t = document.getElementById('ren_1');
+    t.value = decodeURIComponent(t.value)
+}
+
+
+
+</script>
+
+<h1>人 - test</h1>
+
+<div>
+<a>url: http://localhost/test.html?q=人&c=%u4EBA </a>
+</div>
+<br>
+
+ 
+<div><input id="ren_1"> ElementID = ren_1 </input></div>
+
+<div>
+<button type="button" onclick="display_q()">显示:q</button> 
+<button type="button" onclick="display_c()">显示:c</button> 
+</div>
+
+<br>
+
+<div>
+<button type="button" onclick="ascII_decode_me()">ascII_decode_me</button>
+<p>
+function ascII_decode_me(){
+	t = document.getElementById('ren_1');
+    t.value = unescape(t.value)
+}
+</p>
+</div>
+
+
+<div>
+<button type="button" onclick="url_decode_me()">url_decode_me</button>
+<p>
+function url_decode_me(){
+	t = document.getElementById('ren_1');
+    t.value = decodeURIComponent(t.value)
+}</p>
+
+</div>
+
+
+
+
+
+
+
+</body>
+
+</html>
